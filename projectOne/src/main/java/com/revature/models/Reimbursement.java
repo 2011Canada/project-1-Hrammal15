@@ -3,11 +3,11 @@ package com.revature.models;
 public class Reimbursement {
 	
 	 private int id;
-	 private int authorId;
-	 private int resolverId;
-	 private int statusId;  
-	 private int typeId;  
      private double amount;
+	 private String author;
+	 private String resolver;
+	 private String status;  
+	 private String type;  
      private String submitted;  
      private String resolved;
      private String description;
@@ -18,24 +18,24 @@ public class Reimbursement {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Reimbursement(int id, int authorId, int resolverId, int statusId, int typeId, double amount,
+	public Reimbursement(int id, double amount, String author, String resolver, String status, String type,
 			String submitted, String resolved, String description) {
 		super();
 		this.id = id;
-		this.authorId = authorId;
-		this.resolverId = resolverId;
-		this.statusId = statusId;
-		this.typeId = typeId;
 		this.amount = amount;
+		this.author = author;
+		this.resolver = resolver;
+		this.status = status;
+		this.type = type;
 		this.submitted = submitted;
 		this.resolved = resolved;
 		this.description = description;
 	}
 	@Override
 	public String toString() {
-		return "Reimbursement [id=" + id + ", authorId=" + authorId + ", resolverId=" + resolverId + ", statusId="
-				+ statusId + ", typeId=" + typeId + ", amount=" + amount + ", submitted=" + submitted + ", resolved="
-				+ resolved + ", description=" + description + "]";
+		return "Reimbursement [id=" + id + ", amount=" + amount + ", author=" + author + ", resolver=" + resolver
+				+ ", status=" + status + ", type=" + type + ", submitted=" + submitted + ", resolved=" + resolved
+				+ ", description=" + description + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -44,14 +44,14 @@ public class Reimbursement {
 		long temp;
 		temp = Double.doubleToLongBits(amount);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + authorId;
+		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((resolved == null) ? 0 : resolved.hashCode());
-		result = prime * result + resolverId;
-		result = prime * result + statusId;
+		result = prime * result + ((resolver == null) ? 0 : resolver.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((submitted == null) ? 0 : submitted.hashCode());
-		result = prime * result + typeId;
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
 	@Override
@@ -65,7 +65,10 @@ public class Reimbursement {
 		Reimbursement other = (Reimbursement) obj;
 		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
 			return false;
-		if (authorId != other.authorId)
+		if (author == null) {
+			if (other.author != null)
+				return false;
+		} else if (!author.equals(other.author))
 			return false;
 		if (description == null) {
 			if (other.description != null)
@@ -79,16 +82,25 @@ public class Reimbursement {
 				return false;
 		} else if (!resolved.equals(other.resolved))
 			return false;
-		if (resolverId != other.resolverId)
+		if (resolver == null) {
+			if (other.resolver != null)
+				return false;
+		} else if (!resolver.equals(other.resolver))
 			return false;
-		if (statusId != other.statusId)
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
 			return false;
 		if (submitted == null) {
 			if (other.submitted != null)
 				return false;
 		} else if (!submitted.equals(other.submitted))
 			return false;
-		if (typeId != other.typeId)
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
 			return false;
 		return true;
 	}
@@ -98,35 +110,35 @@ public class Reimbursement {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getAuthorId() {
-		return authorId;
-	}
-	public void setAuthorId(int authorId) {
-		this.authorId = authorId;
-	}
-	public int getResolverId() {
-		return resolverId;
-	}
-	public void setResolverId(int resolverId) {
-		this.resolverId = resolverId;
-	}
-	public int getStatusId() {
-		return statusId;
-	}
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
-	}
-	public int getTypeId() {
-		return typeId;
-	}
-	public void setTypeId(int typeId) {
-		this.typeId = typeId;
-	}
 	public double getAmount() {
 		return amount;
 	}
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getResolver() {
+		return resolver;
+	}
+	public void setResolver(String resolver) {
+		this.resolver = resolver;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	public String getSubmitted() {
 		return submitted;
@@ -149,5 +161,6 @@ public class Reimbursement {
      
      
      
-	   
+     
+     
 }

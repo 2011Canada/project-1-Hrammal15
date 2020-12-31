@@ -11,11 +11,43 @@ version="2.5">
 		<servlet-class>com.revature.servlets.AuthServlet</servlet-class>
 	</servlet>
 	
-	<servlet-mapping>
+		<servlet-mapping>
 		<servlet-name>Auth</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>reimbursement</servlet-name>
+		<servlet-class>com.revature.servlets.addReimbursementServlet</servlet-class>
+	</servlet>
+	
+		<servlet-mapping>
+		<servlet-name>reimbursement</servlet-name>
+		<url-pattern>/reimbursement</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateReimbursement</servlet-name>
+		<servlet-class>com.revature.servlets.UpdateReimbursementRequest</servlet-class>
+	</servlet>
+	
+		<servlet-mapping>
+		<servlet-name>updateReimbursement</servlet-name>
+		<url-pattern>/updateReimbursement</url-pattern>
+	</servlet-mapping>
+	
+	
+		<servlet>
+		<servlet-name>HelloWorld</servlet-name>
+		<servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+
 	<filter>
 		<filter-name>CORS</filter-name>
 		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>

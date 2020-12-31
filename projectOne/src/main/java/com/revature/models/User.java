@@ -3,7 +3,7 @@ package com.revature.models;
 public class User {
 	
 	private int users_id;
-	private int user_role_id;
+	private String user_role;
 	private String username;
 	private String password;
 	private String first_name;
@@ -16,11 +16,11 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int users_id, int user_role_id, String username, String password, String first_name, String last_name,
+	public User(int users_id, String user_role, String username, String password, String first_name, String last_name,
 			String email) {
 		super();
 		this.users_id = users_id;
-		this.user_role_id = user_role_id;
+		this.user_role = user_role;
 		this.username = username;
 		this.password = password;
 		this.first_name = first_name;
@@ -29,9 +29,8 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [users_id=" + users_id + ", user_role_id=" + user_role_id + ", username=" + username
-				+ ", password=" + password + ", first_name=" + first_name + ", last_name=" + last_name + ", email="
-				+ email + "]";
+		return "User [users_id=" + users_id + ", user_role=" + user_role + ", username=" + username + ", password="
+				+ password + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -41,7 +40,7 @@ public class User {
 		result = prime * result + ((first_name == null) ? 0 : first_name.hashCode());
 		result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + user_role_id;
+		result = prime * result + ((user_role == null) ? 0 : user_role.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		result = prime * result + users_id;
 		return result;
@@ -75,7 +74,10 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (user_role_id != other.user_role_id)
+		if (user_role == null) {
+			if (other.user_role != null)
+				return false;
+		} else if (!user_role.equals(other.user_role))
 			return false;
 		if (username == null) {
 			if (other.username != null)
@@ -92,11 +94,11 @@ public class User {
 	public void setUsers_id(int users_id) {
 		this.users_id = users_id;
 	}
-	public int getUser_role_id() {
-		return user_role_id;
+	public String getUser_role() {
+		return user_role;
 	}
-	public void setUser_role_id(int user_role_id) {
-		this.user_role_id = user_role_id;
+	public void setUser_role(String user_role) {
+		this.user_role = user_role;
 	}
 	public String getUsername() {
 		return username;
@@ -128,6 +130,8 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
 	
 	
 	

@@ -38,13 +38,33 @@ version="2.5">
 	
 	
 		<servlet>
-		<servlet-name>HelloWorld</servlet-name>
-		<servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+		<servlet-name>FilterRequests</servlet-name>
+		<servlet-class>com.revature.servlets.FilterRequestsServlet</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>HelloWorld</servlet-name>
-		<url-pattern>/hello</url-pattern>
+		<servlet-name>FilterRequests</servlet-name>
+		<url-pattern>/FilterRequests</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ViewAllReimbursements</servlet-name>
+		<servlet-class>com.revature.servlets.ViewAllReimbursementsServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ViewAllReimbursements</servlet-name>
+		<url-pattern>/ViewAllReimbursements</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ViewallByManager</servlet-name>
+		<servlet-class>com.revature.servlets.ViewAll</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ViewallByManager</servlet-name>
+		<url-pattern>/ViewallByManager</url-pattern>
 	</servlet-mapping>
 	
 

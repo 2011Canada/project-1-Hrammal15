@@ -4,38 +4,37 @@ public class Reimbursement {
 	
 	 private int id;
      private double amount;
-	 private String author;
-	 private String resolver;
-	 private String status;  
-	 private String type;  
      private String submitted;  
      private String resolved;
      private String description;
-     
-     
-     
+	 private String author;
+	 private String resolver;
+	 private String type;  
+	 private String status;
+	 
+	 
 	public Reimbursement() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Reimbursement(int id, double amount, String author, String resolver, String status, String type,
-			String submitted, String resolved, String description) {
+	public Reimbursement(int id, double amount, String submitted, String resolved, String description, String author,
+			String resolver, String type, String status) {
 		super();
 		this.id = id;
 		this.amount = amount;
-		this.author = author;
-		this.resolver = resolver;
-		this.status = status;
-		this.type = type;
 		this.submitted = submitted;
 		this.resolved = resolved;
 		this.description = description;
+		this.author = author;
+		this.resolver = resolver;
+		this.type = type;
+		this.status = status;
 	}
 	@Override
 	public String toString() {
-		return "Reimbursement [id=" + id + ", amount=" + amount + ", author=" + author + ", resolver=" + resolver
-				+ ", status=" + status + ", type=" + type + ", submitted=" + submitted + ", resolved=" + resolved
-				+ ", description=" + description + "]";
+		return "Reimbursement [id=" + id + ", amount=" + amount + ", submitted=" + submitted + ", resolved=" + resolved
+				+ ", description=" + description + ", author=" + author + ", resolver=" + resolver + ", type=" + type
+				+ ", status=" + status + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -116,30 +115,6 @@ public class Reimbursement {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public String getResolver() {
-		return resolver;
-	}
-	public void setResolver(String resolver) {
-		this.resolver = resolver;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
 	public String getSubmitted() {
 		return submitted;
 	}
@@ -158,8 +133,33 @@ public class Reimbursement {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-     
-     
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getResolver() {
+		return resolver;
+	}
+	public void setResolver(String resolver) {
+		this.resolver = resolver;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}  
+	 
+	 
+
      
      
      

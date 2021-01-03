@@ -27,7 +27,7 @@ public class UpdateReimbursementRequest extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Reimbursement reimb = om.readValue(request.getInputStream(), Reimbursement.class);
-		if(reimb.getStatus().equals("Approve")) {
+		if(reimb.getStatus().equals("approved")) {
 			try {
 				System.out.println("came into approve");
 				ims.acceptReimbursementRequest(reimb);

@@ -64,7 +64,7 @@ public Reimbursement approveReimburesementRequest(Reimbursement reimbursement) t
 	
 		approveReimburesementReq.setTimestamp(1, todaySQL);
 		approveReimburesementReq.setString(2,reimbursement.getResolver());
-		approveReimburesementReq.setString(3,"Approved");
+		approveReimburesementReq.setString(3,"approved");
 		approveReimburesementReq.setInt(4, reimbursement.getId());
 		
 		approveReimburesementReq.executeUpdate();
@@ -94,7 +94,7 @@ public Reimbursement rejectReimburesementRequest(Reimbursement reimbursement) th
 	
 		approveReimburesementReq.setTimestamp(1, todaySQL);
 		approveReimburesementReq.setString(2,reimbursement.getResolver());
-		approveReimburesementReq.setString(3,"reject");
+		approveReimburesementReq.setString(3,"denied");
 		approveReimburesementReq.setInt(4, reimbursement.getId());
 		
 		approveReimburesementReq.executeUpdate();

@@ -8,68 +8,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.exceptions.InternalErrorException;
-import com.revature.exceptions.UserNotFoundException;
 import com.revature.models.Reimbursement;
-import com.revature.models.User;
+import com.revature.models.Types;
 import com.revature.util.ConnectionFactory;
 
-public class UserDAO implements IUserDAO{
-	
+public class ManagerDAO implements IManagerDAO{
 	private ConnectionFactory cf = ConnectionFactory.getConnectionFactory();
 
-	
-	public User findUserByUsernameAndPassword(String username, String password) throws UserNotFoundException, InternalErrorException{
-		
-		
-		Connection conn = cf.getConnection();
-		try {
-			String sql = "select * from projectOne.ers_users where \"ers_username\" = ? and \"ers_password\" = ?;";
-			PreparedStatement getUser = conn.prepareStatement(sql);
-			getUser.setString(1, username);
-			getUser.setString(2, password);
-
-			
-			ResultSet res = getUser.executeQuery();
-			if(res.next()) {
-				User u = new User();
-				u.setUsers_id(res.getInt("ers_users_id"));
-				u.setUsername(res.getString("ers_username"));
-				u.setPassword(res.getString("ers_password"));
-				u.setFirst_name(res.getString("user_first_name"));
-				u.setLast_name(res.getString("user_last_name"));
-				u.setEmail(res.getString("user_email"));
-				u.setUser_role(res.getString("user_role"));
-	
-				
-				getUser.executeQuery();
-
-
-				return u;
-			
-			}else {
-				throw new UserNotFoundException();
-			}
-	
-}catch(SQLException e) {
-	e.printStackTrace();
-	throw new InternalErrorException();
-	
-}finally {
-	cf.releaseConnection(conn);
-}		
-	}	
-	
-	
-	
-	public List<Reimbursement> getReimbursementByAuthor(Reimbursement reimbursement) throws InternalErrorException {
+	@Override
+	public List<Reimbursement> filterList(Types type) throws InternalErrorException {
 		List<Reimbursement> reimbursementList = new ArrayList<>();
 		Connection conn = cf.getConnection();
 		try {
-			String sql = "select * from projectOne.ers_reimbursement where \"reimb_author\" = ?;";
+			String sql = "select * from projectOne.ers_reimbursement where \"reimb_status\" = ?;";
 			PreparedStatement getReimbursement = conn.prepareStatement(sql);
-			getReimbursement.setString(1, reimbursement.getAuthor());
+			getReimbursement.setString(1, type.getFilter());
 			ResultSet res = getReimbursement.executeQuery();
-			System.out.println(reimbursement.getAuthor());
+			System.out.println(type.getFilter());
 			
 			while(res.next()) {
 				reimbursementList.add(new Reimbursement(
@@ -95,5 +50,41 @@ public class UserDAO implements IUserDAO{
 		return reimbursementList;		
 	}	
 	
+	
+public List<Reimbursement> viewAll() throws InternalErrorException {
+		List<Reimbursement> reimbursementList = new ArrayList<>();
+		Connection conn = cf.getConnection();
+		try {
+			String sql = "select * from projectOne.ers_reimbursement;";
+			PreparedStatement getReimbursement = conn.prepareStatement(sql);
 		
+			ResultSet res = getReimbursement.executeQuery();
+			
+			while(res.next()){
+				reimbursementList.add(new Reimbursement(
+						res.getInt("reimb_id"),
+						res.getDouble("reimb_amount"),
+						res.getString("reimb_submitted"),
+						res.getString("reimb_resolved"),
+						res.getString("reimb_description"),
+						res.getString("reimb_author"),
+						res.getString("reimb_resolver"),
+						res.getString("reimb_type"),
+						res.getString("reimb_status")	
+						));
+			}
+	
+}catch(SQLException e) {
+	e.printStackTrace();
+	throw new InternalErrorException();
+	
+}finally {
+	cf.releaseConnection(conn);
+}
+		return reimbursementList;		
+	}	
+		
+
+
+
 }

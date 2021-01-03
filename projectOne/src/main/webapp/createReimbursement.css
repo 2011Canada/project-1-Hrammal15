@@ -34,10 +34,12 @@ h1{
     text-align: center;
     margin: 1px;
     border: 1px;
-
-
-
 }
+#logoutbutton{
+  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+
+
+ }
   
   .btn:hover {
     background-position: right center; /* change the direction of the change here */

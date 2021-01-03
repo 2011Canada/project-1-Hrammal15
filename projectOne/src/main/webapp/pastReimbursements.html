@@ -9,31 +9,17 @@
 
 </head>
 <body>
+  <h1>Past Reimbursements
+  </h1>
+
+  <input type="button" value="&lt- Back" onclick="history.back()">
+  <input type=button onClick="parent.location='index.html'" value='Logout'>
 
   
 
     <form>
 
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Date submitted</th>
-                <th scope="col">Data Resolved</th>
-                <th scope="col">Description</th>
-                <th scope="col">Submitted By</th>
-                <th scope="col">Resolved By</th>
-                <th scope="col">Type</th>
-                <th scope="col">Current Status</th>
-              </tr>
-            </thead>
-          
-            <input type="submit" class="fadeIn fourth" value="Click to view past Reimbursements">
-
-          </table>
-       
-
+            <input id="button1" type="submit" class="fadeIn fourth" value="Click to view past Reimbursements">
 
     </form>
     <div class='reimbursementHistory'></div>

@@ -4,29 +4,22 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 <h3>Technologies Used<h3>
   <li> Java 8 </li>
-    <li> Java 8 </li>
-    <li> Java 8 </li>
-    <li> Java 8 </li>
-    <li> Java 8 </li>
-    <li> Java 8 </li>
-   JavaScript ES6
-  HTML5
-  CSS
-   PostgreSQL 13.1
+  <li> JavaScript ES6 </li>
+  <li> HTML5</li>
+  <li> CSS</li>
+  <li> PostgreSQL 13.1 </li>
+
   
 
 
 
 
 
-Features
-List of features ready
-Both Employees and Managers can login using the same login page!
-Employees can submit a request for reimbursement under (Food, Travel, Lodging, Other)
-Managers can approve/deny any ticket
-To-do list:
-Improvement to be done on UI
-Improvement to be done on the way manager approves tickets
+<h3>Features</h3>
+<li> Both Employees and Managers can login using the same login page! </li>
+<li> Employees can submit a request for reimbursement under (Food, Travel, Lodging, Other) </li>
+<li> Managers can approve/deny any ticket8 </li>
+
 Getting Started
 Windows git clone command:
 git clone https://github.com/2011Canada/project-1-HenryHsieh999.git

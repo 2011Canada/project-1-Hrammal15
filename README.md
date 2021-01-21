@@ -8,12 +8,13 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
     <ul>JavaScript ES6</ul>
     <ul>HTML5</ul>
     <ul>CSS</ul>
+    <ul>PostgreSQL 13.1</ul>
   </li>
 
 
 
 
-* PostgreSQL 13.1
+
 Features
 List of features ready
 Both Employees and Managers can login using the same login page!

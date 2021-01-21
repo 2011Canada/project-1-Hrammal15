@@ -44,12 +44,13 @@ https://aws.amazon.com/
 <li>Go to http://localhost:8080/ERS/login.html in a Chrome incognito tab</li>
 <h3>Step 5:</h3>
 <li>Login using one of the username and passwords provided in ERSScript</li>
-Usage
-Login as either an Employee or as a Manager
-Employee can apply for reimbursement
-Employee can view all personal past tickets
-Employee can logout
-Manager can view all tickets (both current and past)
-Manager can approve/decline tickets through the use of the ticket's ID number
-Manager can filter by ticket status (approved, pending, denied)
-Manager can logout
+
+<h3>Usage</h3>
+<li>Login as either an Employee or as a Manager</li>
+<li>Employee can apply for reimbursement</li>
+<li>Employee can view all personal past tickets</li>
+<li>Employee can logout</li>
+<li>Manager can view all tickets (both current and past)</li>
+<li>Manager can approve/decline tickets through the use of the ticket's ID number</li>
+<li>Manager can filter by ticket status (approved, pending, denied)</li>
+<li>Manager can logout</li>

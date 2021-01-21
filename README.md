@@ -4,11 +4,11 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 <h3>Technologies Used<h3>
   <li>
-    <ul>Java 8</ul>
-    <ul>JavaScript ES6</ul>
-    <ul>HTML5</ul>
-    <ul>CSS</ul>
-    <ul>PostgreSQL 13.1</ul>
+   Java 8
+   JavaScript ES6
+  HTML5
+  CSS
+   PostgreSQL 13.1
   </li>
 
 
